@@ -1,0 +1,13 @@
+=> Creating database
+create databse student;
+
+=> Using database
+Use student;
+
+=> Creating table
+create table table_name(
+  id int auto_increment primary key,
+  name varchar(255),
+  email varchar(255),
+  birthdate date
+)
