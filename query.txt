@@ -75,7 +75,14 @@ SELECT CONSTRAINT_NAME
 FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE TABLE_NAME = 'students' AND CONSTRAINT_NAME = 'PRIMARY';
 
+=> Selecting a table
+SELECT * FROM your_table_name;
 
+=> Insertin data into students
+INSERT INTO students (name, batch, city_id)
+VALUES ('John Doe', 'Batch A', 1),
+       ('Jane Smith', 'Batch B', 2),
+       ('Bob Johnson', 'Batch A', 1);
 
 
 
