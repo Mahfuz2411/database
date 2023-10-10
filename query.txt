@@ -11,3 +11,23 @@ create table table_name(
   email varchar(255),
   birthdate date
 )
+
+=> Deleting table
+drop table table_name;;
+
+=> Creating table
+create table students(
+  id int auto_increment primary key,
+  name varchar(255),
+  email varchar(255),
+  birthdate date
+)
+
+=> removing auto_increment from id
+alter table students modify id int;
+
+=> delete primary key 
+alter table students drop primary key
+
+=> add another primary key
+alter table students add primary key(name)
