@@ -70,6 +70,27 @@ RENAME TABLE personal TO person;
 ALTER TABLE person
 CHANGE COLUMN mobile mob_num VARCHAR(20) NOT NULL;
 
+=> Checking in students checking primary key exists or not
+SELECT CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE TABLE_NAME = 'students' AND CONSTRAINT_NAME = 'PRIMARY';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
