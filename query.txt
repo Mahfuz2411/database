@@ -23,16 +23,16 @@ CREATE TABLE students (
     city_id INT
 );
 
-=> removing auto_increment from id
+=> Removing auto_increment from id
 alter table students modify id int;
 
-=> delete primary key 
+=> Delete primary key 
 alter table students drop primary key
 
-=> add another primary key
+=> Add another primary key
 alter table students add primary key(name)
 
-=> creating another table
+=> Creating another table
 CREATE TABLE city (
     city_id INT PRIMARY KEY,
     city_name VARCHAR(255) NOT NULL
@@ -43,5 +43,16 @@ ALTER TABLE students
 ADD CONSTRAINT fk_students_city FOREIGN KEY (city_id)
 REFERENCES city(city_id);
 
+=> Creating another table
+CREATE TABLE personal (
+    id INT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    mobile VARCHAR(20) NOT NULL
+);
 
-=> 
+=> Set id(students) and id(personal) as foreign key
+ALTER TABLE students
+ADD CONSTRAINT fk_students_personal FOREIGN KEY (id)
+REFERENCES personal(id);
+
+
