@@ -26,6 +26,8 @@ CREATE TABLE students (
 => Removing auto_increment from id
 alter table students modify id int;
 
+=> Error: Incorrect table definition; there can be only one auto column and it must be defined as a key
+
 => Delete primary key 
 alter table students drop primary key
 
@@ -54,5 +56,20 @@ CREATE TABLE personal (
 ALTER TABLE students
 ADD CONSTRAINT fk_students_personal FOREIGN KEY (id)
 REFERENCES personal(id);
+
+=> Changing coloum name id to stu_id form students and personal
+ALTER TABLE students
+CHANGE COLUMN id stu_id INT;
+ALTER TABLE personal
+CHANGE COLUMN id stu_id INT;
+
+=> Change table name personal to person
+RENAME TABLE personal TO person;
+
+=> Change column name mobile to mob_num in person
+ALTER TABLE person
+CHANGE COLUMN mobile mob_num VARCHAR(20) NOT NULL;
+
+
 
 
